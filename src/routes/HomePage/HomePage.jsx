@@ -1,14 +1,19 @@
 import { Link } from 'react-router-dom';
 import './HomePage.css';
+import { TypeAnimation } from 'react-type-animation';
+import { useState } from 'react';
 
 const HomePage = () => {
+
+    const [ typingStatus, setTypingStatus ] = useState("human1");
+
     return (
         <div className="HomePage">
             <img src="/orbital.png" alt="Orbital" className="orbital" />
             <div className="left">
                 <h1>CROTECHBOT</h1>
                 <h2>Supercharge your creativity and productivity</h2>
-                <h3>Automate your workflow and focus on what you do best by using our AI-powered tool.</h3>
+                <h3>Automate your workflow and focus on what you do best with the help of AI.</h3>
                 <Link to="/dashboard">Get Started</Link>
             </div>
             <div className="right">
@@ -17,6 +22,28 @@ const HomePage = () => {
                         <div className="bg"></div>
                     </div>
                     <img src="/bot.png" alt="Bot" className="bot" />
+                    <div className="chat">
+                        <img src= {typingStatus === "human1" ? "/human1.jpeg" : typingStatus === "human2" ? "/human2.jpeg" : "/bot.png"} />
+                        <TypeAnimation sequence={[
+                            'Can you help me write better emails?', 1500, () => setTypingStatus("bot"),
+                            'Absolutely! I can refine your tone, fix grammar, and make them more professional.', 2000, () => setTypingStatus("human2"),
+                            'What if I need help with coding?', 1500, () => setTypingStatus("bot"),
+                            'No problem! I can debug, suggest improvements, and generate entire functions.', 2000, () => setTypingStatus("human1"),
+                            'Do I need to have previous experience with AI?', 1500, () => setTypingStatus("bot"),
+                            "Not at all! Just ask a question, and I'll guide you step by step.", 2000, () => setTypingStatus("human2"),
+                        ]}
+                        wrapper="span"
+                        repeat={Infinity}
+                        omitDeletionAnimation={true}
+                        />
+                    </div>
+                </div>
+            </div>
+            <div className="copyright">
+                <div className="links">
+                    <Link>© Copyright {new Date().getFullYear()}</Link>
+                    <span> | </span>
+                    <Link>All Rights Reserved by Franjo Lovrić</Link>
                 </div>
             </div>
         </div>

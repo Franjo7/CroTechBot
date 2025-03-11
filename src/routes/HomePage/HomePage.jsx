@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './HomePage.css';
 import { TypeAnimation } from 'react-type-animation';
 import { useState } from 'react';
+import { FaLinkedin, FaGithub, FaInstagram, FaGlobe } from 'react-icons/fa';
 
 const HomePage = () => {
 
@@ -39,11 +40,17 @@ const HomePage = () => {
                     </div>
                 </div>
             </div>
-            <div className="copyright">
-                <div className="links">
+            <div className="footer">
+                <div className="copyright">
                     <Link>© Copyright {new Date().getFullYear()}</Link>
                     <span> | </span>
                     <Link>All Rights Reserved by Franjo Lovrić</Link>
+                </div>
+                <div className="social-media">
+                    <Link to="https://github.com/Franjo7" target="_blank"><FaGithub size={25} /></Link>
+                    <Link to="https://www.linkedin.com/in/franjo-lovric" target="_blank"><FaLinkedin size={25} /></Link>
+                    <Link to="https://www.instagram.com/franjolovric23" target="_blank"><FaInstagram size={25} /></Link>
+                    <Link to="https://franjo-lovric.netlify.app" target="_blank"><FaGlobe size={25} /></Link>
                 </div>
             </div>
         </div>

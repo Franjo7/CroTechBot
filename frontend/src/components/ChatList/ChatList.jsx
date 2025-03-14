@@ -16,10 +16,10 @@ const ChatList = () => {
             </div>
             <hr />
             <div className="social-media">
-                <Link to="https://github.com/Franjo7" target="_blank"><FaGithub size={25} /></Link>
-                <Link to="https://www.linkedin.com/in/franjo-lovric" target="_blank"><FaLinkedin size={25} /></Link>
-                <Link to="https://www.instagram.com/franjolovric23" target="_blank"><FaInstagram size={25} /></Link>
-                <Link to="https://franjo-lovric.netlify.app" target="_blank"><FaGlobe size={25} /></Link>
+                <Link to="https://github.com/Franjo7" target="_blank"><FaGithub size={20} /></Link>
+                <Link to="https://www.linkedin.com/in/franjo-lovric" target="_blank"><FaLinkedin size={20} /></Link>
+                <Link to="https://www.instagram.com/franjolovric23" target="_blank"><FaInstagram size={20} /></Link>
+                <Link to="https://franjo-lovric.netlify.app" target="_blank"><FaGlobe size={20} /></Link>
             </div>
         </div>
     );

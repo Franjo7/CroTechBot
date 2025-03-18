@@ -2,6 +2,7 @@ import { IKImage } from 'imagekitio-react';
 import Upload from '../Upload/Upload';
 import './NewPrompt.css';
 import { useRef, useEffect, useState } from 'react';
+import model from '../../lib/gemini';
 
 const NewPrompt = () => {
 
@@ -16,6 +17,14 @@ const NewPrompt = () => {
     useEffect(() => {
         endRef.current.scrollIntoView({ behavior: "smooth" });
     }, []);
+
+    const add = async () => {
+        const prompt = "Explain how AI works";
+        const result = await model.generateContent(prompt);
+        const response = await result.response;
+        const text = response.text();
+        console.log(text);
+    }  
     
     return (
         <>
@@ -28,6 +37,7 @@ const NewPrompt = () => {
                     height={300}
                 />
             )}
+            <button onClick={add}>TEST AI</button>
             <div className="endChat" ref={endRef}></div>
                 <form className="newForm">
                     <Upload setImage={setImage} />

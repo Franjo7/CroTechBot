@@ -3,9 +3,11 @@ import Upload from '../Upload/Upload';
 import './NewPrompt.css';
 import { useRef, useEffect, useState } from 'react';
 import model from '../../lib/gemini';
+import Markdown from 'react-markdown';
 
 const NewPrompt = () => {
-
+    const [question, setQuestion] = useState("");
+    const [answer, setAnswer] = useState("");
     const [ image, setImage] = useState({
         isLoading: false,
         error: "",
@@ -16,15 +18,21 @@ const NewPrompt = () => {
     
     useEffect(() => {
         endRef.current.scrollIntoView({ behavior: "smooth" });
-    }, []);
+    }, [question, answer, image.databaseData]);
 
-    const add = async () => {
-        const prompt = "Explain how AI works";
-        const result = await model.generateContent(prompt);
+    const add = async (text) => {
+        setQuestion(text);
+        const result = await model.generateContent(text);
         const response = await result.response;
-        const text = response.text();
-        console.log(text);
+        setAnswer(response.text());
     }  
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const text = e.target.text.value;
+        if (!text) return;
+        add(text);
+    }
     
     return (
         <>
@@ -37,12 +45,13 @@ const NewPrompt = () => {
                     height={300}
                 />
             )}
-            <button onClick={add}>TEST AI</button>
+            {question && <div className="message user">{question}</div>}
+            {answer && <div className="message"><Markdown>{answer}</Markdown></div>}
             <div className="endChat" ref={endRef}></div>
-                <form className="newForm">
+                <form className="newForm" onSubmit={handleSubmit}>
                     <Upload setImage={setImage} />
                     <input id='file' type="file" multiple={false} hidden accept='.jpg, .jpeg, .png' />
-                    <input type="text" placeholder="Ask me anything..." />
+                    <input type="text" name='text' placeholder="Ask me anything..." />
                     <button>
                         <img src='/arrow.png' alt="arrow" />
                     </button>

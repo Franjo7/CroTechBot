@@ -8,10 +8,11 @@ import Markdown from 'react-markdown';
 const NewPrompt = () => {
     const [question, setQuestion] = useState("");
     const [answer, setAnswer] = useState("");
-    const [ image, setImage] = useState({
+    const [image, setImage] = useState({
         isLoading: false,
         error: "",
-        databaseData: {}
+        databaseData: {},
+        aiData: {},
     });
 
     const endRef = useRef(null);
@@ -22,9 +23,10 @@ const NewPrompt = () => {
 
     const add = async (text) => {
         setQuestion(text);
-        const result = await model.generateContent(text);
+        const result = await model.generateContent(Object.entries(image.aiData).length ? [image.aiData, text] : text);
         const response = await result.response;
         setAnswer(response.text());
+        setImage({ isLoading: false, error: "", databaseData: {}, aiData: {} });
     }  
 
     const handleSubmit = async (e) => {

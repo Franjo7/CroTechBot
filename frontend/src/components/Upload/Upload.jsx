@@ -70,6 +70,7 @@ const Upload = ({ setImage }) => {
                 useUniqueFileName={true}
                 style={{ display: 'none' }}
                 ref={IKUploadRef}
+                accept="image/*"
             />
         {
             <label onClick={() => IKUploadRef.current.click()}>

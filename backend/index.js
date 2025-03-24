@@ -12,6 +12,8 @@ app.use(cors({
     origin: process.env.CORS_ORIGIN
 }));
 
+app.use(express.json());
+
 const connect = async () => {
     try {
         await mongoose.connect(process.env.MONGO_URI);
@@ -31,6 +33,11 @@ const imagekit = new ImageKit({
 app.get('/api/upload', (req, res) => {
     const result = imagekit.getAuthenticationParameters();
     res.send(result);
+});
+
+app.post('/api/chats', (req, res) => {
+    const { text } = req.body;
+    console.log(text);
 });
 
 app.listen(port, () => {

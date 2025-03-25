@@ -3,6 +3,8 @@ import express from 'express';
 import cors from 'cors';
 import ImageKit from 'imagekit';
 import mongoose from 'mongoose';
+import Chat from './models/chat.js';
+import UserChats from './models/userChats.js';
 
 const port = process.env.PORT || 3000;
 const app = express();
@@ -35,9 +37,52 @@ app.get('/api/upload', (req, res) => {
     res.send(result);
 });
 
-app.post('/api/chats', (req, res) => {
-    const { text } = req.body;
-    console.log(text);
+app.post('/api/chats', async (req, res) => {
+    const { userId, text } = req.body;
+
+    try {
+        // Create a new chat
+        const newChat = new Chat({
+            userId: userId,
+            history: [{ role: 'user', parts: [{ text }] }],
+        });
+
+        const savedChat = await newChat.save();
+
+        // Check if the chat already exists
+        const userChats = await UserChats.find({ userId: userId });
+
+        // If it doesn't exist, create a new chat, and add the chat to the array
+        if (!userChats.length) {
+            const newUserChats = new UserChats({
+                userId: userId,
+                chats: [
+                    {
+                        _id: savedChat._id,
+                        title: text.substring(0, 40),
+                    },
+                ],
+            });
+            await newUserChats.save();
+        } else {
+            // If it exists, push the chat to the existing array
+            await UserChats.updateOne(
+                { userId: userId },
+                {
+                    $push: {
+                        chats: {
+                            _id: savedChat._id,
+                            title: text.substring(0, 40),
+                        },
+                    },
+                }
+            );
+            res.status(201).send(newChat._id);
+        }     
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Error while creating a new chat.');
+    }
 });
 
 app.listen(port, () => {

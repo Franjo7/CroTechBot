@@ -41,7 +41,7 @@ const ChatPage = () => {
                             </div>
                         </React.Fragment>
                     ))}
-                    <NewPrompt />
+                    {data && <NewPrompt data = {data} />}
                 </div>
             </div>
         </div>

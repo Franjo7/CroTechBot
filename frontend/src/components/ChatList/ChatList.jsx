@@ -22,7 +22,7 @@ const ChatList = () => {
             <hr />
             <span className='title'>RECENT CHATS</span>
             <div className="list">
-                {isPending ? <div>Loading...</div> : error ? <div>Something went wrong</div> : data?.map(chat => (
+                {isPending ? <div>Loading...</div> : error ? <div></div> : data?.map(chat => (
                     <Link to={`/dashboard/chats/${chat._id}`} key={chat._id}>{chat.title}</Link>
                 ))}
             </div>

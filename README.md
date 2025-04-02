@@ -1,4 +1,8 @@
-# CroTechBot
+<div>
+    <img src="frontend/public/logo.png" alt="Logo" style="width: 200px; height: auto;" />
+</div>
+
+&nbsp;
 
 The **CroTechBot** is an advanced AI-powered chatbot that leverages Google Gemini AI to provide seamless, intelligent, and real-time conversational experiences. Built with a modern tech stack, including **React**, **Express.js**, and **MongoDB**, the application ensures a high-performance, scalable, and secure environment for users. It is designed to support multiple functionalities, such as **text-based conversations, image analysis, and interactive responses**, making it a powerful tool for both casual users and businesses looking to integrate AI-driven chat solutions.
 
@@ -22,21 +26,21 @@ The **CroTechBot** is an advanced AI-powered chatbot that leverages Google Gemin
 
 ### Backend Technologies
 
-<div style="display: flex; justify-content: left; gap: 5px;">
+<div style="display: flex; justify-content: left; gap: 10px;">
     <a href="https://nodejs.org/" target="_blank">
-        <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+        <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" style="width: 150px; height: 45px;" />
     </a>
     <a href="https://expressjs.com/" target="_blank">
-        <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
+        <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" style="width: 150px; height: 45px;" />
     </a>
     <a href="https://www.mongodb.com/" target="_blank">
-        <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+        <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" style="width: 150px; height: 45px;" />
     </a>
     <a href="https://deepmind.google/technologies/gemini/" target="_blank">
-        <img src="https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemini" />
+        <img src="https://img.shields.io/badge/Google%20Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white" alt="Google Gemini" style="width: 150px; height: 45px;" />
     </a>
     <a href="https://clerk.com/" target="_blank">
-        <img src="https://img.shields.io/badge/Clerk-000000?style=for-the-badge&logo=clerk&logoColor=white" alt="Clerk" />
+        <img src="https://img.shields.io/badge/Clerk-000000?style=for-the-badge&logo=clerk&logoColor=white" alt="Clerk" style="width: 150px; height: 45px;" />
     </a>
 </div>
 
@@ -44,21 +48,21 @@ The **CroTechBot** is an advanced AI-powered chatbot that leverages Google Gemin
 
 ### Frontend Technologies
 
-<div style="display: flex; justify-content: left; gap: 5px;">
+<div style="display: flex; justify-content: left; gap: 10px;">
     <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">
-        <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" />
+        <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5" style="width: 150px; height: 45px;" />  
     </a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">
-        <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" />
+        <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3" style="width: 150px; height: 45px;" />
     </a>
     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" />
+        <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript" style="width: 150px; height: 45px;" />
     </a>
     <a href="https://react.dev/" target="_blank">
-        <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" />
+        <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React" style="width: 150px; height: 45px;" />
     </a>
     <a href="https://imagekit.io/" target="_blank">
-        <img src="https://img.shields.io/badge/ImageKit-000000?style=for-the-badge&logo=imagekit&logoColor=white" alt="ImageKit" />
+        <img src="https://img.shields.io/badge/ImageKit-000000?style=for-the-badge&logo=imagekit&logoColor=white" alt="ImageKit" style="width: 150px; height: 45px;" />
     </a>
 </div>
 

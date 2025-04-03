@@ -18,6 +18,8 @@ The **CroTechBot** is an advanced AI-powered chatbot that leverages Google Gemin
     - [Backend Setup](#backend-setup)
     - [Frontend Setup](#frontend-setup)  
 4. [Demo of the Application](#demo-of-the-application)
+    - [Unauthenticated Users](#unauthenticated-users)
+    - [Authenticated Users](#authenticated-users)
 5. [Conclusion](#conclusion)
 
 &nbsp;
@@ -147,7 +149,41 @@ The **CroTechBot** is an advanced AI-powered chatbot that leverages Google Gemin
 
 ## Demo of the Application
 
-🚀 *Coming soon...*
+### Unauthenticated Users
+
+<details>
+  <summary>Home</summary>
+  <img src="frontend/public/demo/gif-1.gif" alt="Home Page" />
+</details>
+
+<details>
+  <summary>Sign In</summary>
+  <img src="frontend/public/demo/gif-2.gif" alt="Sign In" />
+</details>
+
+<details>
+  <summary>Sign Up</summary>
+  <img src="frontend/public/demo/gif-3.gif" alt="Sign Up" />
+</details>
+
+&nbsp;
+
+### Authenticated Users
+
+<details>
+  <summary>Home</summary>
+  <img src="frontend/public/demo/gif-4.gif" alt="Home Page" />
+</details>
+
+<details>
+  <summary>Create a new Chat</summary>
+  <img src="frontend/public/demo/gif-5.gif" alt="Create a new Chat" />
+</details>
+
+<details>
+  <summary>Analyze Image</summary>
+  <img src="frontend/public/demo/gif-6.gif" alt="Analyze Image" />
+</details>
 
 &nbsp;
 
